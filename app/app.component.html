@@ -1,0 +1,24 @@
+<!--As now Angular doesn't remove selector tag from the rendered html I need to put these is a row and ten add col-sm-3 on <app-card> tag. -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form class="form-inline" (ngSubmit)="addTask()" #taskForm="ngForm">
+        <div class="form-group">
+          <label for="content-field" class="sr-only"></label>
+          <input type="text" class="form-control" id="content-field" required placeholder="Enter a task..." [(ngModel)]="currentTask.content" name="content">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="taskForm.form.invalid"><i class="fa fa-plus" aria-hidden="true"></i>
+ Add Task</button>
+      </form>
+    </div>
+  </div>
+
+    <div class="row">
+      <app-card class="col-sm-3" *ngFor="let task of tasks" [task]="task" ></app-card>
+      <h5 *ngIf="tasks.length == 0" class=" col-md-6 offset-md-3">
+        <p>Task list is empty</p>
+        <p>Add new Tasks using the above form</p>
+      </h5>
+
+    </div>
+  </div>

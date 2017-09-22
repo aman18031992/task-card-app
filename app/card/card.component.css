@@ -1,0 +1,25 @@
+.card{
+  border-radius: 0;
+  cursor: pointer;
+}
+.top-buffer{
+  margin-top: 1.5rem;
+}
+.card,
+.card-footer{
+  background-color: #ffffa5;
+  border: none;
+}
+.card.completed,
+.card.completed .card-footer,
+.card.completed i{
+  background-color: #eee;
+  color: #ccc;
+}
+.card-footer{
+  text-align: right;
+}
+i{
+  color: #cc0000;
+  padding-right: .5rem;
+}
